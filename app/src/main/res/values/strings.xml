@@ -7,13 +7,14 @@
     <string name="log_in">Log In</string>
     <string name="forgot_password">Forgot Password?</string>
     <string name="toggle_password">Toggle Password</string>
+
     <string name="create_account">Create Account</string>
-    <string name="register">Register</string>
-    <string name="email">Email</string>
+    <string name="register">Register\n</string>
     <string name="username">Username</string>
-    <string name="confirm_password">Confirm Password</string>
-    <string name="or_register_with">Or register with</string>
-    <string name="already_have_account">Already have an account? Log in</string>
-    <string name="create_accoount">Create Account\n</string>
+    <string name="enter_your_username">Enter your username</string>
+    <string name="email">Email</string>
     <string name="enter_your_email">Enter your email</string>
+    <string name="enter_your_password">Enter your password</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_confirm_password">Confirm your password</string>
 </resources>
