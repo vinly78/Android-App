@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/app_nav"
-    app:startDestination="@id/loginFragment">
+    app:startDestination="@id/recyclerViewFragment">
 
     <fragment
         android:id="@+id/loginFragment"
@@ -20,11 +20,18 @@
         android:name="com.example.andriodhw.RegisterFragment"
         android:label="Register"
         tools:layout="@layout/fragment_register">
+        <argument
+            android:name="id"
+            app:argType="integer" />
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
-            app:destination="@id/loginFragment"
-            app:popUpTo="@id/loginFragment"
-            app:popUpToInclusive="true" />
+            app:destination="@id/loginFragment" />
     </fragment>
+
+    <fragment
+        android:id="@+id/recyclerViewFragment"
+        android:name="com.example.andriodhw.RecyclerViewFragment"
+        android:label="RecyclerViewFragment"
+        tools:layout="@layout/fragment_recycler_view" />
 
 </navigation>

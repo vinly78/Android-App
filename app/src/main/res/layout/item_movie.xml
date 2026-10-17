@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginHorizontal="16dp"
+    android:layout_marginVertical="8dp"
+    android:background="@drawable/bg_movie_card"
+    android:padding="12dp">
+
+    <!-- Movie Poster Image -->
+    <ImageView
+        android:id="@+id/ivPoster"
+        android:layout_width="110dp"
+        android:layout_height="145dp"
+        android:background="@drawable/bg_rounded_12"
+        android:clipToOutline="true"
+        android:scaleType="centerCrop"
+        android:src="@drawable/mv_spiritaway"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- Rating Badge Overlaid on Poster -->
+    <LinearLayout
+        android:id="@+id/layoutRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="6dp"
+        android:background="@drawable/bg_rating_badge"
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:paddingHorizontal="8dp"
+        android:paddingVertical="4dp"
+        app:layout_constraintStart_toStartOf="@id/ivPoster"
+        app:layout_constraintTop_toTopOf="@id/ivPoster">
+
+        <ImageView
+            android:layout_width="14dp"
+            android:layout_height="14dp"
+            android:contentDescription="Rating Star"
+            android:src="@drawable/ic_star"
+            />
+
+        <TextView
+            android:id="@+id/tvRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="4dp"
+            android:text="Rating"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+    <!-- Premium / Free Badge -->
+    <TextView
+        android:id="@+id/tvAccessType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_premium_badge"
+        android:paddingHorizontal="12dp"
+        android:paddingVertical="4dp"
+        android:text="Premium"
+        android:textColor="@android:color/white"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/ivPoster"
+        app:layout_constraintTop_toTopOf="@id/ivPoster" />
+
+    <!-- Movie Title -->
+    <TextView
+        android:id="@+id/tvTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:text="Title"
+        android:textColor="@android:color/white"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@id/tvAccessType" />
+
+    <!-- Release Year Row -->
+    <ImageView
+        android:id="@+id/icCalendar"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="Calendar"
+        android:src="@drawable/ic_calendar"
+        app:tint="#8E8E93"
+        app:layout_constraintStart_toEndOf="@id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+
+    <TextView
+        android:id="@+id/tvYear"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Year"
+        android:textColor="#8E8E93"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/icCalendar"
+        app:layout_constraintStart_toEndOf="@id/icCalendar"
+        app:layout_constraintTop_toTopOf="@id/icCalendar" />
+
+    <!-- Duration & Age Rating Row -->
+    <ImageView
+        android:id="@+id/icClock"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="Clock"
+        android:src="@drawable/ic_clock"
+        app:tint="#8E8E93"
+        app:layout_constraintStart_toEndOf="@id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@id/icCalendar" />
+
+    <TextView
+        android:id="@+id/tvDuration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Duration"
+        android:textColor="#8E8E93"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/icClock"
+        app:layout_constraintStart_toEndOf="@id/icClock"
+        app:layout_constraintTop_toTopOf="@id/icClock" />
+
+    <!-- Outlined PG-13 Badge -->
+    <TextView
+        android:id="@+id/tvAgeRating"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:background="@drawable/bg_age_rating_tag"
+        android:paddingHorizontal="6dp"
+        android:paddingVertical="2dp"
+        android:text="Age Restriction"
+        android:textColor="#12B3C5"
+        android:textSize="11sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/tvDuration"
+        app:layout_constraintStart_toEndOf="@id/tvDuration"
+        app:layout_constraintTop_toTopOf="@id/tvDuration" />
+
+    <!-- Category / Genre Row -->
+    <ImageView
+        android:id="@+id/icFilm"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:contentDescription="Film"
+        android:src="@drawable/ic_film"
+        app:tint="#8E8E93"
+        app:layout_constraintStart_toEndOf="@id/ivPoster"
+        app:layout_constraintTop_toBottomOf="@id/icClock" />
+
+    <TextView
+        android:id="@+id/tvGenre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="Genre"
+        android:textColor="#8E8E93"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/icFilm"
+        app:layout_constraintStart_toEndOf="@id/icFilm"
+        app:layout_constraintTop_toTopOf="@id/icFilm" />
+
+    <TextView
+        android:id="@+id/tvDivider"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="|"
+        android:textColor="#8E8E93"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvGenre"
+        app:layout_constraintStart_toEndOf="@id/tvGenre"
+        app:layout_constraintTop_toTopOf="@id/tvGenre" />
+
+    <TextView
+        android:id="@+id/tvType"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Movie"
+        android:textColor="@android:color/white"
+        android:textSize="13sp"
+        app:layout_constraintBottom_toBottomOf="@id/tvGenre"
+        app:layout_constraintStart_toEndOf="@id/tvDivider"
+        app:layout_constraintTop_toTopOf="@id/tvGenre" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
